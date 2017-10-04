@@ -13,13 +13,11 @@ export default class Popup {
 		for(let i = 0 ; i < this._els.length; i++){
 			this._addHideClickEvent(this._els[i]);
 			this._open(this._els[i], this._els[i].getAttribute('data-popup'))
-	console.log(1);
 		}
 	}
 
 	_open(el, target){
 		document.querySelector(`.js-popup-link[data-popup-open=${target}]`).addEventListener('click', (e) => {
-			// console.log(this);
 			e.preventDefault();
 			this._fadeIn(el);
 		});
